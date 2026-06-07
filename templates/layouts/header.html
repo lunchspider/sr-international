@@ -1,0 +1,39 @@
+<header class="fixed inset-x-0 top-0 z-50 h-16 sm:h-20 border-b border-neutral-200 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 backdrop-blur-xl">
+  <nav hx-target="#content" hx-swap="innerHTML show:window:top" hx-push-url="true"
+    class="mx-auto container h-full px-4 flex items-center justify-between gap-4">
+    <a href="/" hx-get="/" class="flex items-center gap-2.5 shrink-0">
+      <span class="grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-linear-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-500/30">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" />
+        </svg>
+      </span>
+      <span class="flex flex-col leading-none">
+        <span class="text-base sm:text-lg font-bold tracking-tight text-neutral-900 dark:text-white">SR International</span>
+        <span class="hidden sm:block text-[11px] font-medium tracking-wide uppercase text-amber-600 dark:text-amber-400">Beautiful Solar</span>
+      </span>
+    </a>
+
+    <ul id="nav-links" class="hidden sm:flex items-center gap-7 text-sm font-medium text-neutral-600 dark:text-neutral-300">
+      <li><a href="/" hx-get="/" class="relative inline-block transition-colors hover:text-amber-600 dark:hover:text-amber-400 aria-[current=page]:text-amber-600 dark:aria-[current=page]:text-amber-400 after:content-[''] after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-amber-500 after:transition-transform after:duration-200 hover:after:scale-x-100 aria-[current=page]:after:scale-x-100">Homes</a></li>
+      <li><a href="/business" hx-get="/business" class="relative inline-block transition-colors hover:text-amber-600 dark:hover:text-amber-400 aria-[current=page]:text-amber-600 dark:aria-[current=page]:text-amber-400 after:content-[''] after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-amber-500 after:transition-transform after:duration-200 hover:after:scale-x-100 aria-[current=page]:after:scale-x-100">Business</a></li>
+      <li><a href="/financing" hx-get="/financing" class="relative inline-block transition-colors hover:text-amber-600 dark:hover:text-amber-400 aria-[current=page]:text-amber-600 dark:aria-[current=page]:text-amber-400 after:content-[''] after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-amber-500 after:transition-transform after:duration-200 hover:after:scale-x-100 aria-[current=page]:after:scale-x-100">Financing</a></li>
+      <li><a href="/calculator" hx-get="/calculator" class="relative inline-block transition-colors hover:text-amber-600 dark:hover:text-amber-400 aria-[current=page]:text-amber-600 dark:aria-[current=page]:text-amber-400 after:content-[''] after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-amber-500 after:transition-transform after:duration-200 hover:after:scale-x-100 aria-[current=page]:after:scale-x-100">Calculator</a></li>
+      <li><a href="/contact" hx-get="/contact" class="relative inline-block transition-colors hover:text-amber-600 dark:hover:text-amber-400 aria-[current=page]:text-amber-600 dark:aria-[current=page]:text-amber-400 after:content-[''] after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-amber-500 after:transition-transform after:duration-200 hover:after:scale-x-100 aria-[current=page]:after:scale-x-100">Contact</a></li>
+    </ul>
+
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <a href="/contact" hx-get="/contact" class="hidden sm:inline-flex rounded-full px-5 py-2 text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 shadow-lg shadow-amber-500/20 transition-colors">Get a quote</a>
+      <form action="/api/toggle_theme" method="post">
+        <button type="submit"
+          class="inline-flex items-center justify-center rounded-full px-3 py-2 text-xs sm:text-sm font-semibold border border-neutral-200 dark:border-white/10 text-neutral-700 dark:text-neutral-200 hover:border-amber-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+          {% match theme %} {% when crate::Theme::Dark %}
+          <span>☀️ Light</span>
+          {% when crate::Theme::Light %}
+          <span>🌙 Dark</span>
+          {% endmatch %}
+        </button>
+      </form>
+    </div>
+  </nav>
+</header>

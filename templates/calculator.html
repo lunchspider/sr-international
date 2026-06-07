@@ -1,0 +1,112 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Solar Savings Calculator — SR International{% endblock %}
+
+{% block content %}
+<section class="relative -mx-4 -mt-10 sm:-mt-4 min-h-[20rem] sm:min-h-[24rem] overflow-hidden rounded-b-3xl">
+  <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop"
+    alt="Rows of solar panels glinting under a clear blue sky"
+    class="absolute inset-0 h-full w-full object-cover" />
+  <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/55 to-black/30"></div>
+  <div class="absolute inset-0 bg-linear-to-r from-amber-600/40 to-transparent"></div>
+  <div class="relative mx-auto container px-4 py-16 sm:py-20 max-w-3xl">
+    <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wide text-amber-200 backdrop-blur-sm ring-1 ring-white/20">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+      Free instant estimate
+    </span>
+    <h1 class="mt-6 text-4xl sm:text-5xl font-bold tracking-tight text-balance text-white">
+      See what solar <span class="bg-linear-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">saves you.</span>
+    </h1>
+    <p class="mt-5 max-w-xl text-lg text-pretty text-neutral-100/90">
+      Enter your monthly bill and we'll size a system, project your savings, and show your payback — in seconds.
+    </p>
+  </div>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-16 sm:pt-20 pb-20">
+  <div class="grid gap-6 lg:gap-8 lg:grid-cols-5 lg:items-start">
+    <div class="lg:col-span-2">
+      <div class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 sm:p-8 shadow-lg shadow-amber-500/10">
+        <div class="flex items-start gap-4">
+          <span class="grid place-items-center w-12 h-12 shrink-0 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="2" width="16" height="20" rx="2" />
+              <path d="M8 6h8M8 10h8M8 14h5" />
+              <path d="m15.5 17.5 1.5 1.5 3-3" />
+            </svg>
+          </span>
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight text-balance text-neutral-900 dark:text-white">Estimate your savings</h2>
+            <p class="mt-1 text-neutral-600 dark:text-neutral-300">Two quick details — no contact info needed.</p>
+          </div>
+        </div>
+
+        <form
+          hx-post="/api/calculate-savings"
+          hx-target="#savings-result"
+          hx-swap="innerHTML"
+          hx-disabled-elt="find button"
+          class="mt-8 space-y-6">
+          <div>
+            <label for="monthly_bill" class="block text-sm font-medium text-neutral-700 dark:text-neutral-200">Average monthly electricity bill</label>
+            <div class="relative mt-2">
+              <span class="pointer-events-none absolute inset-y-0 left-0 grid w-11 place-items-center text-neutral-500 dark:text-neutral-400">₹</span>
+              <input
+                id="monthly_bill"
+                name="monthly_bill"
+                type="number"
+                required
+                min="500"
+                step="100"
+                inputmode="numeric"
+                placeholder="5,000"
+                class="w-full rounded-xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 pl-11 pr-4 py-3 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 transition-colors" />
+            </div>
+            <p class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">Per month, in rupees (₹). Minimum ₹500.</p>
+          </div>
+
+          <div>
+            <label for="property_type" class="block text-sm font-medium text-neutral-700 dark:text-neutral-200">Property type</label>
+            <select
+              id="property_type"
+              name="property_type"
+              class="mt-2 w-full appearance-none rounded-xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 bg-[length:1.25rem] bg-[right_0.875rem_center] bg-no-repeat bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23a3a3a3%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22m6%209%206%206%206-6%22/%3E%3C/svg%3E')] px-4 py-3 pr-11 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 transition-colors">
+              <option value="residential">Residential (home or society)</option>
+              <option value="commercial">Commercial or industrial</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white bg-amber-500 hover:bg-amber-600 shadow-lg shadow-amber-500/30 transition-colors disabled:opacity-60 disabled:cursor-wait">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 animate-spin opacity-0 [.htmx-request_&]:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle class="opacity-25" cx="12" cy="12" r="9" stroke="currentColor" stroke-width="3" />
+              <path class="opacity-90" d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            </svg>
+            Calculate my savings
+          </button>
+
+          <p class="text-center text-xs text-neutral-500 dark:text-neutral-400">Estimates only — your survey gives exact figures.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="lg:col-span-3">
+      <div id="savings-result" class="h-full">
+        <div class="grid h-full min-h-[20rem] place-items-center rounded-3xl border border-dashed border-neutral-300 dark:border-white/15 bg-neutral-50/60 dark:bg-neutral-800/30 p-10 text-center">
+          <div>
+            <span class="mx-auto grid place-items-center w-14 h-14 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 17l6-6 4 4 7-7" />
+                <path d="M17 8h4v4" />
+              </svg>
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-neutral-900 dark:text-white">Enter your details to see your estimate</h3>
+            <p class="mx-auto mt-2 max-w-sm text-pretty text-neutral-600 dark:text-neutral-300">Your personalised system size, savings, and payback will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* Drive `dark:` utilities from the <html class="dark"> theme toggle
+   instead of the OS `prefers-color-scheme` setting. */
+@custom-variant dark (&:where(.dark, .dark *));

@@ -1,0 +1,176 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Solar for Business — SR International{% endblock %}
+
+{% block content %}
+<section class="relative -mx-4 -mt-10 sm:-mt-4 min-h-[28rem] sm:min-h-[34rem] overflow-hidden rounded-b-3xl">
+  <img src="https://images.unsplash.com/photo-1605980413988-9ff24c537935?q=80&w=1600&auto=format&fit=crop"
+    alt="Commercial building rooftop covered with rows of solar panels"
+    class="absolute inset-0 h-full w-full object-cover" />
+  <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/55 to-black/30"></div>
+  <div class="absolute inset-0 bg-linear-to-r from-amber-600/40 to-transparent"></div>
+  <div class="relative mx-auto container px-4 py-20 sm:py-28 max-w-3xl">
+    <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wide text-amber-200 backdrop-blur-sm ring-1 ring-white/20">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+      Commercial &amp; Industrial Solar
+    </span>
+    <h1 class="mt-6 text-4xl sm:text-6xl font-bold tracking-tight text-balance text-white">
+      Power your business with <span class="bg-linear-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">solar.</span>
+    </h1>
+    <p class="mt-6 max-w-xl text-lg text-pretty text-neutral-100/90">
+      Turn your roof and idle land into a profit centre. SR International engineers high-yield solar that slashes operating costs for commercial and industrial spaces.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3">
+      <a href="#" class="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white bg-amber-500 hover:bg-amber-600 shadow-lg shadow-amber-500/30 transition-colors">
+        Get a commercial quote
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+      <a href="/contact" hx-get="/contact" hx-target="#content" hx-swap="innerHTML show:window:top" hx-push-url="true" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold text-white ring-1 ring-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors">Talk to an advisor</a>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28">
+  <div class="max-w-2xl">
+    <span class="text-sm font-medium tracking-wide uppercase text-amber-600 dark:text-amber-400">Why go commercial solar</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-white">Built for the bottom line</h2>
+    <p class="mt-4 text-lg text-pretty text-neutral-600 dark:text-neutral-300">A solar asset that lowers your power bill, strengthens your balance sheet, and future-proofs your operations.</p>
+  </div>
+  <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 17l6-6 4 4 7-7" />
+          <path d="M17 8h4v4" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Slash operating costs</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Generate power on-site and cut your electricity bill from day one — for decades.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 21h16M6 21V9l6-4 6 4v12" />
+          <path d="M9 13h6M9 17h6" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Accelerated depreciation &amp; tax benefits</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Claim accelerated depreciation and incentives that sharpen your return on investment.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9" />
+          <path d="M12 21c-2.5-3-2.5-15 0-18" />
+          <path d="M3.5 9h17M3.5 15h17" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Meet ESG &amp; sustainability goals</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Cut carbon, report verified green energy, and strengthen your ESG credentials.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="7" height="7" rx="1" />
+          <rect x="14" y="4" width="7" height="7" rx="1" />
+          <rect x="3" y="15" width="7" height="5" rx="1" />
+          <rect x="14" y="15" width="7" height="5" rx="1" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Scalable rooftop &amp; ground-mount</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">From a single warehouse roof to a multi-acre ground-mount farm — sized to your load.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28">
+  <div class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-8 sm:p-12 shadow-lg shadow-amber-500/5">
+    <dl class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="text-center sm:text-left">
+        <dt class="text-4xl font-bold tracking-tight text-amber-600 dark:text-amber-400">Up to 40%</dt>
+        <dd class="mt-2 text-neutral-600 dark:text-neutral-300">lower energy costs</dd>
+      </div>
+      <div class="text-center sm:text-left">
+        <dt class="text-4xl font-bold tracking-tight text-amber-600 dark:text-amber-400">5–6 yr</dt>
+        <dd class="mt-2 text-neutral-600 dark:text-neutral-300">typical payback period</dd>
+      </div>
+      <div class="text-center sm:text-left">
+        <dt class="text-4xl font-bold tracking-tight text-amber-600 dark:text-amber-400">25 yr</dt>
+        <dd class="mt-2 text-neutral-600 dark:text-neutral-300">performance warranty</dd>
+      </div>
+      <div class="text-center sm:text-left">
+        <dt class="text-4xl font-bold tracking-tight text-amber-600 dark:text-amber-400">Tier-1</dt>
+        <dd class="mt-2 text-neutral-600 dark:text-neutral-300">certified modules</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28">
+  <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+    <div class="grid grid-cols-2 gap-4">
+      <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=900&auto=format&fit=crop"
+        alt="Aerial view of a large ground-mount solar panel farm"
+        loading="lazy"
+        class="col-span-2 h-64 w-full rounded-3xl object-cover shadow-lg shadow-amber-500/10" />
+      <img src="https://images.unsplash.com/photo-1626793369994-a904d2462888?q=80&w=900&auto=format&fit=crop"
+        alt="Close-up texture of a photovoltaic solar panel surface"
+        loading="lazy"
+        class="h-44 w-full rounded-3xl object-cover shadow-lg shadow-amber-500/10" />
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&auto=format&fit=crop"
+        alt="Rows of solar panels glinting under a clear blue sky"
+        loading="lazy"
+        class="h-44 w-full rounded-3xl object-cover shadow-lg shadow-amber-500/10" />
+    </div>
+    <div>
+      <span class="text-sm font-medium tracking-wide uppercase text-amber-600 dark:text-amber-400">Turnkey EPC</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-white">We design, build, and maintain it all</h2>
+      <p class="mt-4 text-lg text-pretty text-neutral-600 dark:text-neutral-300">One accountable partner from feasibility to first generation and beyond — your team stays focused on the business.</p>
+      <ul class="mt-8 space-y-5">
+        <li class="flex gap-4">
+          <span class="mt-0.5 inline-flex w-7 h-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+          </span>
+          <p class="text-neutral-700 dark:text-neutral-300"><span class="font-semibold text-neutral-900 dark:text-white">Engineering &amp; design</span> — load studies, structural surveys, and yield modelling tuned to your site.</p>
+        </li>
+        <li class="flex gap-4">
+          <span class="mt-0.5 inline-flex w-7 h-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+          </span>
+          <p class="text-neutral-700 dark:text-neutral-300"><span class="font-semibold text-neutral-900 dark:text-white">Procurement &amp; build</span> — tier-1 modules installed by certified crews with zero downtime.</p>
+        </li>
+        <li class="flex gap-4">
+          <span class="mt-0.5 inline-flex w-7 h-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+          </span>
+          <p class="text-neutral-700 dark:text-neutral-300"><span class="font-semibold text-neutral-900 dark:text-white">Approvals &amp; net metering</span> — we handle permits, utility liaison, and grid connection end to end.</p>
+        </li>
+        <li class="flex gap-4">
+          <span class="mt-0.5 inline-flex w-7 h-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+          </span>
+          <p class="text-neutral-700 dark:text-neutral-300"><span class="font-semibold text-neutral-900 dark:text-white">Monitoring &amp; O&amp;M</span> — live performance dashboards and proactive maintenance keep output high.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28 pb-20">
+  <div class="relative min-h-[20rem] overflow-hidden rounded-3xl shadow-lg shadow-amber-500/20">
+    <img src="https://images.unsplash.com/photo-1626077641207-54883482bb0a?q=80&w=1600&auto=format&fit=crop"
+      alt="Advisors discussing a commercial solar installation plan on site"
+      loading="lazy"
+      class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-linear-to-r from-amber-600/90 via-orange-500/75 to-amber-500/55"></div>
+    <div class="relative px-8 py-16 sm:px-16 sm:py-20 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance text-white">Ready to cut your energy bill?</h2>
+      <p class="mx-auto mt-4 max-w-md text-pretty text-amber-50">Our engineers survey your site and hand you a costed proposal with projected savings — no commitment, no pressure.</p>
+      <a href="/contact" hx-get="/contact" hx-target="#content" hx-swap="innerHTML show:window:top" hx-push-url="true" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-amber-600 bg-white hover:bg-amber-50 shadow-lg shadow-black/10 transition-colors">
+        Book a commercial site survey
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

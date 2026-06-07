@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="{{theme}}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/public/styles/app.css" rel="stylesheet" />
+  <link href="/public/favicon.ico" rel="icon" />
+  <script src="/assets/js/htmx.org@1.9.5_dist_htmx.min.js"></script>
+  <script src="/assets/js/hyperscript.org@0.9.11_dist__hyperscript.min.js"></script>
+  <script src="/assets/js/fontawesome.js"></script>
+  <title>{%block title %}Axum OAuth{% endblock %}</title>
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"
+    integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+    crossorigin="anonymous"></script>
+  <script>
+    // Highlight the navbar link matching the current route — on first load and
+    // after every htmx navigation (the header isn't re-rendered on fragment swaps).
+    function setActiveNav() {
+      var path = location.pathname;
+      document.querySelectorAll("#nav-links a").forEach(function (a) {
+        if (a.getAttribute("href") === path) a.setAttribute("aria-current", "page");
+        else a.removeAttribute("aria-current");
+      });
+    }
+    document.addEventListener("DOMContentLoaded", setActiveNav);
+    document.addEventListener("htmx:pushedIntoHistory", setActiveNav);
+    document.addEventListener("htmx:historyRestore", setActiveNav);
+  </script>
+</head>
+
+<body class="dark:bg-neutral-900 dark:text-white bg-white text-black min-h-[100svh] flex flex-col">
+  <!-- Header -->
+  {% include "layouts/header.html" %}
+
+  <!-- Content -->
+  <main id="content" class="p-4 container mx-auto pt-10 flex-grow">
+    {% block content %} {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  {% include "layouts/footer.html" %}
+</body>
+
+</html>

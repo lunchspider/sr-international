@@ -1,0 +1,172 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Solar Financing — SR International{% endblock %}
+
+{% block content %}
+<section class="relative -mx-4 -mt-10 sm:-mt-4 min-h-[28rem] sm:min-h-[34rem] overflow-hidden rounded-b-3xl">
+  <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop"
+    alt="Rows of solar panels glinting under a clear blue sky"
+    class="absolute inset-0 h-full w-full object-cover" />
+  <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/55 to-black/30"></div>
+  <div class="absolute inset-0 bg-linear-to-r from-amber-600/40 to-transparent"></div>
+  <div class="relative mx-auto container px-4 py-20 sm:py-28 max-w-3xl">
+    <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wide text-amber-200 backdrop-blur-sm ring-1 ring-white/20">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+      Flexible solar financing
+    </span>
+    <h1 class="mt-6 text-4xl sm:text-6xl font-bold tracking-tight text-balance text-white">
+      Go solar with <span class="bg-linear-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">little to nothing upfront.</span>
+    </h1>
+    <p class="mt-6 max-w-xl text-lg text-pretty text-neutral-100/90">
+      Zero-cost EMIs, easy solar loans, and pay-per-unit lease &amp; PPA plans — plus the PM Surya Ghar subsidy handled for you. Find the path that fits your budget.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3">
+      <a href="#" class="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white bg-amber-500 hover:bg-amber-600 shadow-lg shadow-amber-500/30 transition-colors">
+        Check your eligibility
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+      <a href="/calculator" hx-get="/calculator" hx-target="#content" hx-swap="innerHTML show:window:top" hx-push-url="true" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold text-white ring-1 ring-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors">Calculate savings</a>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28">
+  <div class="max-w-2xl">
+    <span class="text-sm font-medium tracking-wide uppercase text-amber-600 dark:text-amber-400">Ways to pay</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-white">Financing built around your budget</h2>
+    <p class="mt-4 text-lg text-pretty text-neutral-600 dark:text-neutral-300">Own it, finance it, or pay only for the power you use. Every option is designed to put savings in your pocket from day one.</p>
+  </div>
+  <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="5" width="20" height="14" rx="2" />
+          <path d="M2 10h20M6 15h4" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Zero-cost EMIs</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Spread the cost over easy monthly instalments with no interest and no extra charges.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M14.5 9a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.9-2.5 2s1.1 2 2.5 2 2.5.9 2.5 2-1.1 2-2.5 2A2.5 2.5 0 0 1 9.5 15M12 6v1.5M12 16.5V18" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Solar loans up to 60 months</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Competitive-rate loans with flexible tenures so your savings can cover the payments.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9" />
+          <path d="m8 12 2.5 2.5L16 9" />
+          <path d="M3 16h18M3 20h18" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Lease &amp; PPA (pay per unit)</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">No system cost at all — we install and maintain it, you simply pay for the units you use.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+          <circle cx="12" cy="13" r="2.5" />
+          <path d="M12 2v3" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Government subsidy</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Claim your PM Surya Ghar rooftop subsidy — we handle the paperwork end to end.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28">
+  <div class="max-w-2xl">
+    <span class="text-sm font-medium tracking-wide uppercase text-amber-600 dark:text-amber-400">How it works</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-white">From application to savings in four steps</h2>
+    <p class="mt-4 text-lg text-pretty text-neutral-600 dark:text-neutral-300">A simple, transparent process — most homeowners are approved within days, not weeks.</p>
+  </div>
+  <ol class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-amber-500 text-white font-bold shadow-lg shadow-amber-500/30">1</span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Apply</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Share a few basic details online — it takes under five minutes, with no paperwork.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-amber-500 text-white font-bold shadow-lg shadow-amber-500/30">2</span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Get approved</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">A soft credit check returns your tailored options and EMI, often within 48 hours.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-amber-500 text-white font-bold shadow-lg shadow-amber-500/30">3</span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">We install</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Our certified team designs, installs, and commissions your system end to end.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-amber-500 text-white font-bold shadow-lg shadow-amber-500/30">4</span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">You save</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Switch on and start cutting bills from day one, while your system pays for itself.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28">
+  <div class="max-w-2xl">
+    <span class="text-sm font-medium tracking-wide uppercase text-amber-600 dark:text-amber-400">Peace of mind</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-white">Clear terms, no surprises</h2>
+    <p class="mt-4 text-lg text-pretty text-neutral-600 dark:text-neutral-300">Applying is fast, transparent, and won't affect your credit score.</p>
+  </div>
+  <ul class="mt-12 grid gap-6 sm:grid-cols-3">
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2 4 5v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V5Z" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">No hidden charges</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">The price you see is the price you pay — every fee is on the table upfront.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3M8 11l2 2 3.5-3.5" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Soft credit check</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Checking your options is a soft enquiry — it has zero impact on your credit score.</p>
+    </li>
+    <li class="rounded-3xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-800/50 p-7 shadow-lg shadow-amber-500/5 hover:shadow-amber-500/15 transition-shadow">
+      <span class="grid place-items-center w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20 dark:ring-amber-400/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 2" />
+        </svg>
+      </span>
+      <h3 class="mt-5 font-semibold text-lg text-neutral-900 dark:text-white">Approval in 48 hours</h3>
+      <p class="mt-2 text-neutral-600 dark:text-neutral-300">Most applications are reviewed and approved within two working days.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="mx-auto container max-w-6xl pt-20 sm:pt-28 pb-20">
+  <div class="relative min-h-[20rem] overflow-hidden rounded-3xl shadow-lg shadow-amber-500/20">
+    <img src="https://images.unsplash.com/photo-1637417494521-78b4d1d33029?q=80&w=1600&auto=format&fit=crop"
+      alt="Modern home with a rooftop solar panel installation at golden hour"
+      loading="lazy"
+      class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-linear-to-r from-amber-600/90 via-orange-500/75 to-amber-500/55"></div>
+    <div class="relative px-8 py-16 sm:px-16 sm:py-20 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance text-white">See what you qualify for</h2>
+      <p class="mx-auto mt-4 max-w-md text-pretty text-amber-50">Answer a few quick questions and we'll show you your financing options — no obligation, no hit to your credit.</p>
+      <a href="#" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-amber-600 bg-white hover:bg-amber-50 shadow-lg shadow-black/10 transition-colors">
+        Check eligibility
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}
