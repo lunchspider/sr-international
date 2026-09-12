@@ -37,7 +37,7 @@ async fn main() -> anyhow::Result<()> {
 }
 
 async fn get_app_router() -> Router {
-    return Router::new()
+    Router::new()
         .route("/status_check", get(status_check))
         .route("/", get(home))
         .route("/business", get(business))
@@ -48,7 +48,8 @@ async fn get_app_router() -> Router {
         .route("/api/calculate-savings", post(api::calculate_savings))
         .route("/savings-report", get(savings_report_page))
         .route("/api/savings-report", post(api::savings_report))
-        .nest_service("/public", ServeDir::new("public"));
+        .route("/research", get(research_page))
+        .nest_service("/public", ServeDir::new("public"))
 }
 
 async fn status_check() -> &'static str {
@@ -182,6 +183,30 @@ async fn calculator(headers: HeaderMap, UserTheme(theme): UserTheme) -> impl Int
     } else {
         Html(
             CalculatorTemplate {
+                theme: theme.unwrap_or_default(),
+            }
+            .render()
+            .unwrap(),
+        )
+    }
+}
+
+#[derive(Template)]
+#[template(path = "research.html")]
+struct ResearchTemplate {
+    theme: Theme,
+}
+
+#[derive(Template)]
+#[template(path = "research.html", block = "content")]
+struct ResearchContent;
+
+async fn research_page(headers: HeaderMap, UserTheme(theme): UserTheme) -> impl IntoResponse {
+    if headers.contains_key("HX-Request") {
+        Html(ResearchContent.render().unwrap())
+    } else {
+        Html(
+            ResearchTemplate {
                 theme: theme.unwrap_or_default(),
             }
             .render()
