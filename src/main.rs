@@ -89,7 +89,7 @@ impl Display for Theme {
             Theme::Light => "light",
         };
 
-        return write!(f, "{}", val);
+        write!(f, "{}", val)
     }
 }
 
@@ -242,7 +242,7 @@ async fn savings_report_page(headers: HeaderMap, UserTheme(theme): UserTheme) ->
 #[derive(Debug, Default)]
 pub struct UserTheme(pub Option<Theme>);
 
-pub const COOKIE_THEME: &'static str = "cookie_theme";
+pub const COOKIE_THEME: &str = "cookie_theme";
 
 impl<S> FromRequestParts<S> for UserTheme
 where
