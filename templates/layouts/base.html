@@ -15,18 +15,28 @@
     // after every htmx navigation (the header isn't re-rendered on fragment swaps).
     function setActiveNav() {
       var path = location.pathname;
-      document.querySelectorAll("#nav-links a").forEach(function (a) {
+      var links = document.getElementById("nav-links");
+      links.querySelectorAll("a").forEach(function (a) {
         if (a.getAttribute("href") === path) a.setAttribute("aria-current", "page");
         else a.removeAttribute("aria-current");
       });
+      // Reveal the selected tab without scrolling the page vertically.
+      var active = links.querySelector('[aria-current="page"]');
+      if (active && links.scrollWidth > links.clientWidth) {
+        var tab = active.getBoundingClientRect();
+        var bar = links.getBoundingClientRect();
+        if (tab.left < bar.left) links.scrollLeft += tab.left - bar.left - 8;
+        else if (tab.right > bar.right) links.scrollLeft += tab.right - bar.right + 8;
+      }
     }
     document.addEventListener("DOMContentLoaded", setActiveNav);
     document.addEventListener("htmx:pushedIntoHistory", setActiveNav);
     document.addEventListener("htmx:historyRestore", setActiveNav);
+    window.addEventListener("resize", setActiveNav);
   </script>
 </head>
 
-<body class="dark:bg-neutral-900 dark:text-white bg-white text-black min-h-[100svh] flex flex-col">
+<body class="dark:bg-neutral-900 dark:text-white bg-white text-black min-h-[100svh] pt-28 sm:pt-32 xl:pt-20 flex flex-col">
   <!-- Header -->
   {% include "layouts/header.html" %}
 
